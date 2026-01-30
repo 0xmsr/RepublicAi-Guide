@@ -20,7 +20,7 @@ sudo apt install curl git jq lz4 build-essential -y
 
 # Instalasi Go (v1.21.6)
 sudo rm -rf /usr/local/go
-curl -L [https://go.dev/dl/go1.21.6.linux-amd64.tar.gz](https://go.dev/dl/go1.21.6.linux-amd64.tar.gz) | sudo tar -xzf - -C /usr/local
+curl -L https://go.dev/dl/go1.21.6.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
 echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bashrc
 source $HOME/.bashrc
 ```
@@ -31,7 +31,7 @@ source $HOME/.bashrc
 **Lakukan build binari dari source code resmi.**
 
 ```bash
-git clone [https://github.com/republic-ai/republic-node.git](https://github.com/republic-ai/republic-node.git)
+git clone https://github.com/republic-ai/republic-node.git
 cd republic-node
 make install
 
@@ -39,7 +39,7 @@ make install
 republicd init <MONIKER> --chain-id republic_20241-1
 
 # Genesis & Peers
-curl -L [https://raw.githubusercontent.com/republic-ai/republic-node/main/genesis.json](https://raw.githubusercontent.com/republic-ai/republic-node/main/genesis.json) > $HOME/.republic/config/genesis.json
+curl -L https://raw.githubusercontent.com/republic-ai/republic-node/main/genesis.json > $HOME/.republic/config/genesis.json
 PEERS="d512a97cf1e4ee4544d678864f1d4ed9a6f3b063@152.42.203.111:26656,e1250280f5572e81eddf4401a742c525f0a0d912@157.245.197.66:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.republic/config/config.toml
 ```
